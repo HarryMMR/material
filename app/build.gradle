@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.1.1"
+    buildToolsVersion "23.0.0"
 
     defaultConfig {
         applicationId "com.rey.material.demo"
@@ -12,20 +12,10 @@ android {
         versionName "0.0.5"
     }
 
-    signingConfigs {
-        release {
-            storeFile file(MATERIAL_KEYSTORE_FILE)
-            storePassword MATERIAL_KEYSTORE_PASSWORD
-            keyAlias MATERIAL_KEYSTORE_ALIAS
-            keyPassword MATERIAL_KEYSTORE_PASSWORD
-        }
-    }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
         }
     }
 }
